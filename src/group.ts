@@ -9,16 +9,13 @@ import * as React from "react";
 import { withBrontosaurus } from "./connect";
 import { BrontosaurusEnabledForProps, BrontosaurusProps, WithAuthComponent } from "./declare";
 
-export type EnableForGroupProp =
-    {
-        readonly group: string[];
-        readonly placeholder?: any;
+export type EnableForGroupProp = {
 
-        readonly children?: any;
-    }
-    & BrontosaurusProps
-    & BrontosaurusEnabledForProps;
+    readonly group: string[];
+    readonly placeholder?: any;
 
+    readonly children?: any;
+} & BrontosaurusProps & BrontosaurusEnabledForProps;
 
 export const EnableForGroupBase: React.ComponentType<EnableForGroupProp> = (props: EnableForGroupProp) => {
 
