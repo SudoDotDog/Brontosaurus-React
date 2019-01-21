@@ -1,0 +1,56 @@
+{
+  "name": "@brontosaurus/react",
+  "version": "1.0.0",
+  "description": ":city_sunrise: Brontosaurus React Implement",
+  "main": "dist/index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudodotdog/brontosaurus-react.git"
+  },
+  "keywords": [
+    "brontosaurus"
+  ],
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sudodotdog/brontosaurus-react/issues"
+  },
+  "homepage": "https://github.com/sudodotdog/brontosaurus-react#readme",
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "script/**/*.ts",
+      "src/**/*.ts"
+    ],
+    "instrument": true,
+    "reporter": [
+      "json",
+      "text-summary"
+    ],
+    "report-dir": "coverage",
+    "require": [
+      "./test/tshook.js"
+    ],
+    "sourceMap": true
+  },
+  "devDependencies": {
+    "@sudoo/mock": "^1.0.0",
+    "@sudoo/react-force-dev": "^1.1.0",
+    "@sudoo/triforce": "^1.2.0"
+  },
+  "dependencies": {
+    "@brontosaurus/web": "^1.1.0",
+    "@sudoo/react-force": "^1.1.0",
+    "install": "^0.12.2",
+    "make": "^0.8.1"
+  }
+}
