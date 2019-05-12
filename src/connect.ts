@@ -4,7 +4,7 @@
  * @description Connect
  */
 
-import { Brontosaurus } from "@brontosaurus/web";
+import { Brontosaurus, Token } from "@brontosaurus/web";
 import * as React from "react";
 import { BrontosaurusProps, ExcludeAuth } from "./declare";
 
@@ -15,7 +15,7 @@ export const withBrontosaurus = <T extends BrontosaurusProps>(Component: any): R
         React.createElement(Component, {
             ...originProps,
             auth: {
-                visit: () => Brontosaurus.rummage(),
-                strict: () => Brontosaurus.token(),
+                visit: (): Token | null => Brontosaurus.soft(),
+                strict: (): Token => Brontosaurus.hard(),
             },
         });
