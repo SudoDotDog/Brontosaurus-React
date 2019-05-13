@@ -31,9 +31,9 @@
   integrity sha512-FdnuyLKTVNmvFsoruVyTENnBAoJZaevDCpMW3K8+qakVqpwgbdT+xnxv/lZPd8/K/go+A7/bTGNtefkcKnuh+A==
 
 "@brontosaurus/web@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@brontosaurus/web/-/web-1.3.0.tgz#0ce4fda892208809d9ca4318ddf6ad0ecb3abccd"
-  integrity sha512-TB8rGSnGnLkQYDxaHLpSbfRHkAjH7qFYFAbeTHZf2b5/FTq1372AdAAiXeoJay/2EyfojGEpKJ385Ze4dFMqEQ==
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@brontosaurus/web/-/web-1.3.2.tgz#35af51c76adb10e88b10b975082e6811dac01ed9"
+  integrity sha512-TseKSsa006zKtvILQmtAOTUIsiNTzDnB7/baZdye72G40qGUFUzka/Kov0pkLsga7u64FiL1nUDIaBYhaLxkKg==
   dependencies:
     "@brontosaurus/definition" "^1.4.3"
 
