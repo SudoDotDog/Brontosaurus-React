@@ -16,17 +16,26 @@ export type EnableForGroupProp = {
     readonly group: string[];
     readonly mode?: EnableForGroupMode;
     readonly placeholder?: any;
+    readonly validation?: (token: Token | null) => boolean;
 
     readonly children?: any;
 } & BrontosaurusProps & BrontosaurusEnabledForProps;
 
 export const EnableForGroupBase: React.ComponentType<EnableForGroupProp> = (props: EnableForGroupProp) => {
 
-    const mode: EnableForGroupMode = props.mode || 'oneOf';
 
     const token: Token | null = props.visit
         ? props.auth.visit()
         : props.auth.strict();
+    const mode: EnableForGroupMode = props.mode || 'oneOf';
+    const placeholder: any = props.placeholder || null;
+
+    if (props.validation) {
+
+        if (!props.validation(token)) {
+            return placeholder;
+        }
+    }
 
     if (token && token.groups) {
 
@@ -45,12 +54,12 @@ export const EnableForGroupBase: React.ComponentType<EnableForGroupProp> = (prop
             }
         })();
 
-        return valid ? props.children : (props.placeholder || null);
+        return valid ? props.children : placeholder;
     }
 
     if (props.visit) {
 
-        return props.placeholder || null;
+        return placeholder;
     }
 
     throw new Error('[Brontosaurus-React] Invalid Token');
