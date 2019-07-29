@@ -7,7 +7,7 @@
 import { Token } from "@brontosaurus/web";
 import * as React from "react";
 import { withBrontosaurus } from "./connect";
-import { BrontosaurusEnabledForProps, BrontosaurusProps, WithAuthComponent } from "./declare";
+import { BrontosaurusProps, WithAuthComponent } from "./declare";
 
 export type EnableForGroupMode = 'oneOf' | 'all';
 
@@ -17,14 +17,15 @@ export type EnableForGroupProp = {
     readonly mode?: EnableForGroupMode;
     readonly placeholder?: any;
     readonly validation?: (token: Token | null) => boolean;
+    readonly visit?: boolean;
 
     readonly children?: any;
-} & BrontosaurusProps & BrontosaurusEnabledForProps;
+} & BrontosaurusProps;
 
 export const EnableForGroupBase: React.ComponentType<EnableForGroupProp> = (props: EnableForGroupProp) => {
 
 
-    const token: Token | null = props.visit
+    const token: Token | null = Boolean(props.visit)
         ? props.auth.visit()
         : props.auth.strict();
     const mode: EnableForGroupMode = props.mode || 'oneOf';

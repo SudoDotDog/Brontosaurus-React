@@ -1,6 +1,6 @@
 {
   "name": "@brontosaurus/react",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": ":city_sunrise: Brontosaurus React Implement",
   "main": "dist/index.js",
   "directories": {
@@ -51,7 +51,7 @@
     "@sudoo/triforce": "^1.6.0"
   },
   "dependencies": {
-    "@brontosaurus/web": "^1.6.1"
+    "@brontosaurus/web": "^1.6.2"
   },
   "peerDependencies": {
     "@brontosaurus/web": "*"

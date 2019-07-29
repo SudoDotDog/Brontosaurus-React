@@ -5,6 +5,6 @@
  */
 
 export { withBrontosaurus } from "./connect";
-export { BrontosaurusEnabledForProps, BrontosaurusProps, ExcludeAuth, WithAuthComponent } from "./declare";
+export { BrontosaurusProps, ExcludeAuth, WithAuthComponent } from "./declare";
 export { EnableForGroup, EnableForGroupProp } from "./group";
 
