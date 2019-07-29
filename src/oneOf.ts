@@ -9,7 +9,7 @@ import * as React from "react";
 import { withBrontosaurus } from "./connect";
 import { BrontosaurusProps, WithAuthComponent } from "./declare";
 
-export type EnableForGroupProp = {
+export type EnableForOneOfGroupProp = {
 
     readonly group: string[];
     readonly placeholder?: any;
@@ -19,7 +19,7 @@ export type EnableForGroupProp = {
     readonly children?: any;
 } & BrontosaurusProps;
 
-export const EnableForGroupBase: React.ComponentType<EnableForGroupProp> = (props: EnableForGroupProp) => {
+export const EnableForOneOfGroupBase: React.ComponentType<EnableForOneOfGroupProp> = (props: EnableForOneOfGroupProp) => {
 
     const token: Token | null = Boolean(props.visit)
         ? props.auth.visit()
@@ -38,10 +38,7 @@ export const EnableForGroupBase: React.ComponentType<EnableForGroupProp> = (prop
         const groups: string[] = token.groups;
 
         const valid: boolean = (() => {
-            return props.group.reduce((previous: boolean, group: string) => {
-                if (!previous) return false;
-                return groups.includes(group);
-            }, true);
+            return props.group.some((value: string) => groups.includes(value));
         })();
 
         return valid ? props.children : placeholder;
@@ -55,4 +52,4 @@ export const EnableForGroupBase: React.ComponentType<EnableForGroupProp> = (prop
     throw new Error('[Brontosaurus-React] Invalid Token');
 };
 
-export const EnableForGroup: WithAuthComponent<EnableForGroupProp> = withBrontosaurus(EnableForGroupBase);
+export const EnableForOneOfGroup: WithAuthComponent<EnableForOneOfGroupProp> = withBrontosaurus(EnableForOneOfGroupBase);
