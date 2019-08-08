@@ -39,7 +39,9 @@ export const EnableForGroupBase: React.ComponentType<EnableForGroupProp> = (prop
 
         const valid: boolean = (() => {
             return props.group.reduce((previous: boolean, group: string) => {
-                if (!previous) return false;
+                if (!previous) {
+                    return false;
+                }
                 return groups.includes(group);
             }, true);
         })();
