@@ -66,11 +66,11 @@
     react-router-dom "^5.0.0"
 
 "@sudoo/triforce@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@sudoo/triforce/-/triforce-1.8.0.tgz#2fb1d31225d463025d58d11f82f2b3ffbff67a12"
-  integrity sha512-iGksjViAIECjigWul6FMaGNVdOJ+uOiNPVzpbZOHx40+qSeuayJBX+tcXa4NmK9F9O4bzwWgnnFAwRuP2D0bGw==
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@sudoo/triforce/-/triforce-1.8.1.tgz#b8c9f848d749cc09315c35e27073651ff828a0fb"
+  integrity sha512-0Al10y8AiYy1JRP5JfCIOjsLjtPbiNGUzW58+6vj1hEqfae9XB4Ub0hpdLyRsDnOU6ZhZNh0gC0MTALQ1D7FzQ==
   dependencies:
-    "@sudoo/tslint-config" "^1.4.0"
+    "@sudoo/tslint-config" "^1.5.0"
     "@types/chai" "^4.1.7"
     "@types/chance" "^1.0.5"
     "@types/mocha" "^5.2.7"
@@ -82,10 +82,10 @@
     tslint "^5.18.0"
     typescript "^3.5.3"
 
-"@sudoo/tslint-config@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@sudoo/tslint-config/-/tslint-config-1.4.0.tgz#c47709f0e801a33689e5456d8160ccc78a7b6b58"
-  integrity sha512-mzFPTtWs2v93Z66j2TJF3fZVwkj63L4lXtyhn7fCSVpdvfOMJK8+kaPag2IDQp89Sf3CqwKMPy3vlBojpLCBlg==
+"@sudoo/tslint-config@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/tslint-config/-/tslint-config-1.5.0.tgz#e512497ee8d111c98bc690fc7c6470c0269178b6"
+  integrity sha512-W2eGNKP8GMU0U5afYgNcx6tiGcBYNlLsz3C4MbYHnJRUfSoXkjhkPCBWZTq/iuq/Uzd2KhAm0PCYlTl7Od1Mag==
 
 "@types/chai@^4.1.7":
   version "4.1.7"
@@ -129,12 +129,7 @@
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.2.7.tgz#315d570ccb56c53452ff8638738df60726d5b6ea"
   integrity sha512-NYrtPht0wGzhwe9+/idPaBB+TqkY9AhTvOLMkThm0IoEfLaiVQZwBwyJ5puCkO3AUCWrmcoePjp2mbFocKy4SQ==
 
-"@types/node@*":
-  version "11.10.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.10.5.tgz#fbaca34086bdc118011e1f05c47688d432f2d571"
-  integrity sha512-DuIRlQbX4K+d5I+GMnv+UfnGh+ist0RdlvOp+JZ7ePJ6KQONCFQv/gKYSU1ZzbVdFSUCKZOltjmpFAGGv5MdYA==
-
-"@types/node@^12.7.1":
+"@types/node@*", "@types/node@^12.7.1":
   version "12.7.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.1.tgz#3b5c3a26393c19b400844ac422bd0f631a94d69d"
   integrity sha512-aK9jxMypeSrhiYofWWBf/T7O+KwaiAHzM4sveCdWPn71lzUSMimRnKzhXDKfKwV1kWoBo2P1aGgaIYGLf9/ljw==
