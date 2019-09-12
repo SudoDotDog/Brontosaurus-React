@@ -9,9 +9,9 @@ import * as React from "react";
 import { Route, RouteComponentProps, RouteProps } from "react-router-dom";
 
 export type SecureRouteProps = {
-    readonly groups: string[];
-    readonly fallbackComponent?: React.ComponentType<any>;
     readonly all?: boolean;
+    readonly groups?: string[];
+    readonly fallbackComponent?: React.ComponentType<any>;
 } & RouteProps;
 
 export const SecureRoute: React.FC<SecureRouteProps> = (props: SecureRouteProps) => {
@@ -23,15 +23,18 @@ export const SecureRoute: React.FC<SecureRouteProps> = (props: SecureRouteProps)
 
             const getFallback = () => props.fallbackComponent ? React.createElement(props.fallbackComponent, renderProps) : null;
 
-            const token: Token = Brontosaurus.hard();
+            if (props.groups) {
 
-            if (Boolean(props.all)) {
-                if (!token.hasGroups(...props.groups)) {
-                    return getFallback();
-                }
-            } else {
-                if (!token.hasOneOfGroup(...props.groups)) {
-                    return getFallback();
+                const token: Token = Brontosaurus.hard();
+
+                if (Boolean(props.all)) {
+                    if (!token.hasGroups(...props.groups)) {
+                        return getFallback();
+                    }
+                } else {
+                    if (!token.hasOneOfGroup(...props.groups)) {
+                        return getFallback();
+                    }
                 }
             }
 
