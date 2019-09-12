@@ -21,23 +21,27 @@ export const SecureRoute: React.FC<SecureRouteProps> = (props: SecureRouteProps)
         exact: props.exact,
         render: (renderProps: RouteComponentProps) => {
 
+            const getFallback = () => props.fallbackComponent ? React.createElement(props.fallbackComponent, renderProps) : null;
+
             const token: Token = Brontosaurus.hard();
 
             if (Boolean(props.all)) {
                 if (!token.hasGroups(...props.groups)) {
-                    return props.fallbackComponent ? React.createElement(props.fallbackComponent, renderProps) : null;
+                    return getFallback();
                 }
             } else {
                 if (!token.hasOneOfGroup(...props.groups)) {
-                    return props.fallbackComponent ? React.createElement(props.fallbackComponent, renderProps) : null;
+                    return getFallback();
                 }
             }
 
             if (props.component) {
                 return React.createElement(props.component, renderProps);
-            } else {
+            } else if (props.render) {
                 return props.render(renderProps);
             }
+
+            return getFallback();
         },
     } as RouteProps);
 };
