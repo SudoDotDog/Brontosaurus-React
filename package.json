@@ -1,6 +1,6 @@
 {
   "name": "@brontosaurus/react",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": ":city_sunrise: Brontosaurus React Implement",
   "main": "dist/index.js",
   "directories": {
