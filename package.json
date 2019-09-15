@@ -51,6 +51,6 @@
     "@sudoo/triforce": "^1.8.3"
   },
   "dependencies": {
-    "@brontosaurus/web": "^2.0.3"
+    "@brontosaurus/web": "^2.0.4"
   }
 }
