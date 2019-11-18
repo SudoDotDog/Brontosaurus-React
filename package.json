@@ -48,7 +48,7 @@
     "@sudoo/mock": "^1.2.0",
     "@sudoo/react-force": "^1.6.0",
     "@sudoo/react-force-dev": "^1.6.0",
-    "@sudoo/triforce": "^1.8.3"
+    "@sudoo/triforce": "^2.0.3"
   },
   "dependencies": {
     "@brontosaurus/web": "^3.0.4"
