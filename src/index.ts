@@ -8,5 +8,6 @@ export { withBrontosaurus } from "./connect";
 export { BrontosaurusProps, ExcludeAuth, WithAuthComponent } from "./declare";
 export { EnableForGroup, EnableForGroupProp } from "./group";
 export { EnableForOneOfGroup, EnableForOneOfGroupProp } from "./one-of";
-export { SecureRoute } from "./route";
+export * from "./route";
+export * from "./suspense";
 

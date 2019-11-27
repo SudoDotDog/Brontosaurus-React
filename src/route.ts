@@ -7,7 +7,7 @@
 import { Brontosaurus, Token } from "@brontosaurus/web";
 import * as React from "react";
 import { Route, RouteComponentProps, RouteProps } from "react-router-dom";
-import { getFallbackComponent } from "./common";
+import { getPartialComponent } from "./common";
 
 export type SecureRouteProps = {
     readonly all?: boolean;
@@ -28,11 +28,11 @@ export const SecureRoute: React.FC<SecureRouteProps> = (props: SecureRouteProps)
 
                 if (Boolean(props.all)) {
                     if (!token.hasGroups(...props.groups)) {
-                        return getFallbackComponent(renderProps, props.fallbackComponent);
+                        return getPartialComponent(renderProps, props.fallbackComponent);
                     }
                 } else {
                     if (!token.hasOneOfGroup(...props.groups)) {
-                        return getFallbackComponent(renderProps, props.fallbackComponent);
+                        return getPartialComponent(renderProps, props.fallbackComponent);
                     }
                 }
             }
@@ -43,7 +43,7 @@ export const SecureRoute: React.FC<SecureRouteProps> = (props: SecureRouteProps)
                 return props.render(renderProps);
             }
 
-            return getFallbackComponent(renderProps, props.fallbackComponent);
+            return getPartialComponent(renderProps, props.fallbackComponent);
         },
     } as RouteProps);
 };

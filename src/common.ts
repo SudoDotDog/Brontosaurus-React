@@ -6,10 +6,10 @@
 
 import * as React from "react";
 
-export const getFallbackComponent = (renderProps: any, fallbackComponent?: React.ComponentType<any>): React.ReactNode => {
+export const getPartialComponent = (renderProps: any, component?: React.ComponentType<any>): React.ReactNode => {
 
-    if (fallbackComponent) {
-        return React.createElement(fallbackComponent, renderProps);
+    if (component) {
+        return React.createElement(component, renderProps);
     }
 
     return null;

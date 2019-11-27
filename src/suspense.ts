@@ -7,7 +7,7 @@
 import { Brontosaurus, Token } from "@brontosaurus/web";
 import * as React from "react";
 import { Route, RouteComponentProps, RouteProps } from "react-router-dom";
-import { getFallbackComponent } from "./common";
+import { getPartialComponent } from "./common";
 
 export type SecureLazyRouteProps = {
     readonly all?: boolean;
@@ -36,17 +36,17 @@ export const SecureLazyRoute: React.FC<SecureLazyRouteProps> = (props: SecureLaz
 
                 if (Boolean(props.all)) {
                     if (!token.hasGroups(...props.groups)) {
-                        return getFallbackComponent(renderProps, props.fallbackComponent);
+                        return getPartialComponent(renderProps, props.fallbackComponent);
                     }
                 } else {
                     if (!token.hasOneOfGroup(...props.groups)) {
-                        return getFallbackComponent(renderProps, props.fallbackComponent);
+                        return getPartialComponent(renderProps, props.fallbackComponent);
                     }
                 }
             }
 
             return React.createElement(React.Suspense, {
-                fallback: props.loadingComponent,
+                fallback: getPartialComponent(renderProps, props.loadingComponent) as any,
             }, React.createElement(React.lazy(props.render), renderProps));
         },
     } as RouteProps);
