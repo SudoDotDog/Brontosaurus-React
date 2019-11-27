@@ -42,7 +42,7 @@
   resolved "https://registry.yarnpkg.com/@sudoo/mock/-/mock-1.2.0.tgz#7c3c5ff731ddaeb8839dac7a1384b8ef9d95948b"
   integrity sha512-k0JtsW2rrbwpjbuVQPCPq3cu+CeRWTP2ksFUnrNwlVbSwWcxzE/NdAajWFRP1tvQQNQ01tj/c4lnOV5IZmZaTg==
 
-"@sudoo/react-force-dev@^1.6.0":
+"@sudoo/react-force-dev@^1.6.1":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@sudoo/react-force-dev/-/react-force-dev-1.6.1.tgz#88a95fe56cc229f0d34f2fc59eda40691ab26c45"
   integrity sha512-97MyCj0yk1izz/MrYW20Iye8KZBtzbqnccAYJ2WjxUiWUgCT0OESNX5ZaEx5Ijn7ml9dGYHB7ynqUndbVEC0VA==
@@ -56,7 +56,7 @@
     enzyme-adapter-react-16 "1.15.1"
     react-hot-loader "^4.12.15"
 
-"@sudoo/react-force@^1.6.0":
+"@sudoo/react-force@^1.6.1":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@sudoo/react-force/-/react-force-1.6.1.tgz#40d642c3922e2c1a9b5a2cbe84752b9dd1e661bb"
   integrity sha512-yuHM7pKBYi6LxnvMlQ6A2lHNttovNGuNEmBzr8uLr5buY8HyQg0gw+JCyMc1SIPSg8Ldw4ma/rhhWfSk0MkWXw==

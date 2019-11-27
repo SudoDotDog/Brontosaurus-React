@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Brontosaurus_React
- * @description Group
+ * @description One Of
  */
 
 import { Token } from "@brontosaurus/web";
