@@ -10,6 +10,7 @@ import { Route, RouteComponentProps, RouteProps } from "react-router-dom";
 import { getPartialComponent } from "./common";
 
 export type SecureLazyRouteProps = {
+
     readonly all?: boolean;
     readonly groups?: string[];
     readonly fallbackComponent?: React.ComponentType<any>;
@@ -20,7 +21,7 @@ export type SecureLazyRouteProps = {
     readonly sensitive?: boolean;
     readonly strict?: boolean;
 
-    readonly render: () => any;
+    readonly import: () => Promise<{ default: React.ComponentType<any> }>;
 };
 
 export const SecureLazyRoute: React.FC<SecureLazyRouteProps> = (props: SecureLazyRouteProps) => {
@@ -47,7 +48,10 @@ export const SecureLazyRoute: React.FC<SecureLazyRouteProps> = (props: SecureLaz
 
             return React.createElement(React.Suspense, {
                 fallback: getPartialComponent(renderProps, props.loadingComponent) as any,
-            }, React.createElement(React.lazy(props.render), renderProps));
+            }, React.createElement(
+                React.lazy(props.import),
+                renderProps,
+            ));
         },
     } as RouteProps);
 };
