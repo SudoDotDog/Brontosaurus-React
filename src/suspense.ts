@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Brontosaurus_React
- * @description Route
+ * @description Lazy Route
  */
 
 import { Brontosaurus, Token } from "@brontosaurus/web";
@@ -9,13 +9,21 @@ import * as React from "react";
 import { Route, RouteComponentProps, RouteProps } from "react-router-dom";
 import { getFallbackComponent } from "./common";
 
-export type SecureRouteProps = {
+export type SecureLazyRouteProps = {
     readonly all?: boolean;
     readonly groups?: string[];
     readonly fallbackComponent?: React.ComponentType<any>;
-} & RouteProps;
+    readonly loadingComponent?: React.ComponentType<any>;
 
-export const SecureRoute: React.FC<SecureRouteProps> = (props: SecureRouteProps) => {
+    readonly path?: string | string[];
+    readonly exact?: boolean;
+    readonly sensitive?: boolean;
+    readonly strict?: boolean;
+
+    readonly render: () => any;
+};
+
+export const SecureLazyRoute: React.FC<SecureLazyRouteProps> = (props: SecureLazyRouteProps) => {
 
     return React.createElement(Route, {
         path: props.path,
@@ -37,13 +45,9 @@ export const SecureRoute: React.FC<SecureRouteProps> = (props: SecureRouteProps)
                 }
             }
 
-            if (props.component) {
-                return React.createElement(props.component, renderProps);
-            } else if (props.render) {
-                return props.render(renderProps);
-            }
-
-            return getFallbackComponent(renderProps, props.fallbackComponent);
+            return React.createElement(React.Suspense, {
+                fallback: props.loadingComponent,
+            }, React.createElement(React.lazy(props.render), renderProps));
         },
     } as RouteProps);
 };
