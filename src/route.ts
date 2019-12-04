@@ -10,7 +10,9 @@ import { Route, RouteComponentProps, RouteProps } from "react-router-dom";
 import { getPartialComponent } from "./common";
 
 export type SecureRouteProps = {
+
     readonly all?: boolean;
+    readonly reverse?: boolean;
     readonly groups?: string[];
     readonly fallbackComponent?: React.ComponentType<any>;
 } & RouteProps;
@@ -28,6 +30,10 @@ export const SecureRoute: React.FC<SecureRouteProps> = (props: SecureRouteProps)
 
                 if (Boolean(props.all)) {
                     if (!token.hasGroups(...props.groups)) {
+                        return getPartialComponent(renderProps, props.fallbackComponent);
+                    }
+                } else if (Boolean(props.reverse)) {
+                    if (!token.hasNoGroups(...props.groups)) {
                         return getPartialComponent(renderProps, props.fallbackComponent);
                     }
                 } else {

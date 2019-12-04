@@ -12,6 +12,7 @@ import { getPartialComponent } from "./common";
 export type SecureLazyRouteProps = {
 
     readonly all?: boolean;
+    readonly reverse?: boolean;
     readonly groups?: string[];
     readonly fallbackComponent?: React.ComponentType<any>;
     readonly loadingComponent?: React.ComponentType<any>;
@@ -37,6 +38,10 @@ export const SecureLazyRoute: React.FC<SecureLazyRouteProps> = (props: SecureLaz
 
                 if (Boolean(props.all)) {
                     if (!token.hasGroups(...props.groups)) {
+                        return getPartialComponent(renderProps, props.fallbackComponent);
+                    }
+                } else if (Boolean(props.reverse)) {
+                    if (!token.hasNoGroups(...props.groups)) {
                         return getPartialComponent(renderProps, props.fallbackComponent);
                     }
                 } else {
