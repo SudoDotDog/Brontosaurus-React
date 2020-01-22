@@ -46,11 +46,11 @@
   },
   "devDependencies": {
     "@sudoo/mock": "^1.2.0",
-    "@sudoo/react-force": "^1.6.1",
-    "@sudoo/react-force-dev": "^1.6.1",
-    "@sudoo/triforce": "^2.0.4"
+    "@sudoo/react-force": "^1.6.2",
+    "@sudoo/react-force-dev": "^1.6.4",
+    "@sudoo/triforce": "^2.1.0"
   },
   "dependencies": {
-    "@brontosaurus/web": "^3.3.0"
+    "@brontosaurus/web": "^3.3.1"
   }
 }
