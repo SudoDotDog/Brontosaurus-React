@@ -8,6 +8,7 @@
             "es2017",
             "es6"
         ],
+        "jsx": "react",
         "module": "commonjs",
         "moduleResolution": "node",
         "noImplicitAny": true,

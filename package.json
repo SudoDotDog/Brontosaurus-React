@@ -1,6 +1,6 @@
 {
   "name": "@brontosaurus/react",
-  "version": "3.3.1",
+  "version": "3.4.0",
   "description": ":city_sunrise: Brontosaurus React Implement",
   "main": "dist/index.js",
   "directories": {
@@ -45,6 +45,8 @@
     "sourceMap": true
   },
   "devDependencies": {
+    "@brontosaurus/definition": "^3.1.0",
+    "@sudoo/io": "^1.6.2",
     "@sudoo/mock": "^1.2.0",
     "@sudoo/react-force": "^1.6.2",
     "@sudoo/react-force-dev": "^1.6.4",
