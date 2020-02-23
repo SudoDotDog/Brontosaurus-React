@@ -1,6 +1,6 @@
 {
   "name": "@brontosaurus/react",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "description": ":city_sunrise: Brontosaurus React Implement",
   "main": "dist/index.js",
   "directories": {
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@brontosaurus/definition": "^3.1.2",
-    "@brontosaurus/web": "^3.5.0"
+    "@brontosaurus/web": "^3.5.1"
   },
   "devDependencies": {
     "@sudoo/io": "^1.6.2",
