@@ -11,6 +11,7 @@ import { EnableForGroup, withBrontosaurus } from '../../src/index';
 
 describe('Given a {Index} Class', (): void => {
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const chance: Chance.Chance = new Chance('brontosaurus-react-index');
 
     it('should be able to export function', (): void => {

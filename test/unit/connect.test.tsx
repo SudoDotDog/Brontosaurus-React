@@ -15,6 +15,7 @@ import { MockComponent } from "../mock/mock";
 describe('Given a [withBrontosaurus] Helper function', (): void => {
 
     const chance: Chance.Chance = new Chance('brontosaurus-react-connect');
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const Connected: React.ComponentType = withBrontosaurus(MockComponent);
 
     const render = (props: any = {}, children: string = chance.string()): ShallowWrapper<any> => {
@@ -33,11 +34,9 @@ describe('Given a [withBrontosaurus] Helper function', (): void => {
 
         const component: ShallowWrapper<any> = render();
 
-        // tslint:disable-next-line
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(component.props().auth).to.be.exist;
-        // tslint:disable-next-line
         expect(component.props().auth.visit).to.be.instanceOf(Function);
-        // tslint:disable-next-line
         expect(component.props().auth.strict).to.be.instanceOf(Function);
     });
 

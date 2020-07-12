@@ -1,14 +1,7 @@
 {
   "name": "@brontosaurus/react",
-  "version": "3.11.0",
+  "version": "3.12.1",
   "description": ":city_sunrise: Brontosaurus React Implement",
-  "directories": {
-    "doc": "docs",
-    "test": "test"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sudodotdog/brontosaurus-react.git"
@@ -37,10 +30,6 @@
       "text-summary"
     ],
     "report-dir": "coverage",
-    "require": [
-      "./test/tshook.js",
-      "./test/mock.ts"
-    ],
     "sourceMap": true
   },
   "peerDependencies": {
