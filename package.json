@@ -19,7 +19,7 @@
     "@brontosaurus/web": "*"
   },
   "dependencies": {
-    "@brontosaurus/definition": "^3.4.0"
+    "@brontosaurus/definition": "^3.4.1"
   },
   "devDependencies": {
     "@brontosaurus/web": "^3.12.1",
